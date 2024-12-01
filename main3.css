@@ -1,0 +1,203 @@
+
+
+.container
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #222;
+  z-index: 1000;
+  
+  max-height: 10px;
+  
+  -webkit-tap-highlight-color: transparent;
+  
+  
+  
+}
+
+
+.name h4
+{
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+}
+
+
+.navil
+{
+  display: flex;
+  list-style: none;
+  animation: fadeout 3s forwards;
+  
+  
+  
+}
+
+.navil li
+{
+  margin: 0 15px;
+}
+
+.navil li a
+{
+  text-decoration: none;
+  font-size: 18px;
+  color: #fff;
+}
+
+
+
+/*
+ 007BFF
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px)
+{
+  .navil {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 30px;
+    right: 10px;
+    background-color: #333;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    width: 80px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: translateY(-20px);
+    
+    
+    
+  }
+  
+  
+
+  .navil.show
+  {
+    display: flex;
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+    
+    animation: fadeIn 0.3s ease-out forward;
+    
+  }
+
+  .hamburger
+  {
+    display: flex;
+  }
+
+  .navil li
+  {
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .navil li a
+  {
+    font-size: 18px;
+  }
+
+
+
+
+@keyframes fadeIn
+{
+  from
+  {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut
+{
+  from
+  {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to
+  {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+
+
+
+
+
+.hamburger 
+{
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 18px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.hamburger span
+{
+  background-color: #999;
+  height: 3px;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+
+.hamburger.open span:nth-child(1)
+{
+  transform: translateY(7px);
+}
+
+.hamburger.open span:nth-child(2)
+{
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3)
+{
+  transform: translateY(-7px);
+}
+
+
+@media (max-width: 768px)
+{
+  .hamburger
+  {
+    display: flex;
+  }
+}
+}
